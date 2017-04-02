@@ -6,7 +6,7 @@ AWS-SES-Serverless-Example
 This repo is an example of sending email using SES on Lambda invocation. It uses the AWS SES nodeJS SDK to send emails. Various parameters for sending email such as **sourceEmail** address, **destination** email address can be specified as **body parameter** for the Deployed APIGateway URL.
 
 ### Technical Architecture:
-![Architecture diagram](https://raw.githubusercontent.com/lakshmantgld/aws-ses-serverless-example/stable/readmeFiles/architecture.png)
+![Architecture diagram](https://raw.githubusercontent.com/lakshmantgld/aws-ses-serverless-example/master/readmeFiles/architecture.png)
 
 ### Notes on AWS SES
 If you are in **SES sandbox**, you have to **verify both sender and receiver email addresses**. But, If you have migrated out of SES sandbox, sender mail alone must be verified.
@@ -53,4 +53,4 @@ The above credentials are required for deploying the **Lambda** and **APIGateway
 ```
 
 Here is the picture of similar invocation made in postman:
-![Post parameters](https://raw.githubusercontent.com/lakshmantgld/aws-ses-serverless-example/stable/readmeFiles/postmanScreenshot.png)
+![Post parameters](https://raw.githubusercontent.com/lakshmantgld/aws-ses-serverless-example/master/readmeFiles/postmanScreenshot.png)
