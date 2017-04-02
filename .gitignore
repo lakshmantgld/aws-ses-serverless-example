@@ -5,3 +5,6 @@ jspm_packages
 # Serverless directories
 .serverless
 config.json
+
+# OSX stupid annoying stuff
+.DS_Store
