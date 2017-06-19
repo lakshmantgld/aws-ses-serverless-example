@@ -2,7 +2,7 @@
 
 // importing AWS sdk
 import AWS from 'aws-sdk';
-
+import request from 'request';
 // importing config file which contains AWS key
 // Best practice: to use a config.copy.json when pushing to github
 // Coz exposing the AWS keys to public is not good
@@ -88,6 +88,11 @@ module.exports.sendMail = (event, context, callback) => {
   let sourceEmail = event.body.sourceEmail;
   let replyToAddresses = event.body.replyToAddresses;
 
+// Building the slack message
+  var options = {
+    text: 'We have got a customer support from ' + replyToAddresses + ' Log into <https://privateemail.com/appsuite/> to answer their query.',
+  }
+
 // The parameters for sending mail using ses.sendEmail()
   let emailParams = {
     Destination: {
@@ -125,9 +130,19 @@ module.exports.sendMail = (event, context, callback) => {
           console.log(err, err.stack);
           callback(err);
       } else {
-          console.log(data);
+        console.log("SES successful");
+        console.log(data);
+
+        request.post(config.slackWebhook, { body: JSON.stringify(options)}, function (err, httpResponse, body) {
+          if (err) {
+            console.error('Slack webhook failed:', err);
+            callback(err);
+          }
+          console.log('Post to slack bot successful!!');
+          console.log(httpResponse);
+          console.log('Post to slack bot replied with:', body);
           callback(null, response);
+        });
       }
   });
-
 };

@@ -8,3 +8,6 @@ config.json
 
 # OSX stupid annoying stuff
 .DS_Store
+
+# unwanted
+react-contactform
