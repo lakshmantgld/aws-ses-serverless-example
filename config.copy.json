@@ -3,6 +3,7 @@
     "accessKeyId": "",
     "secretAccessKey": "",
     "region": ""
-  }
+  },
+  "slackWebhook": ""
 
 }
