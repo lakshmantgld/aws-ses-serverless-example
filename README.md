@@ -9,7 +9,8 @@ This repo is an example of sending email using SES on Lambda invocation. It uses
 ![Architecture diagram](https://raw.githubusercontent.com/lakshmantgld/aws-ses-serverless-example/master/readmeFiles/architecture.png)
 
 ### Notes on AWS SES
-If you are in **SES sandbox**, you have to **verify both sender and receiver email addresses**. But, If you have migrated out of SES sandbox, sender mail alone must be verified.
+- If you are in **SES sandbox**, you have to **verify both sender and receiver email addresses**. But, If you have migrated out of SES sandbox, sender mail alone must be verified.
+- Best practice is to use IAM roles compared to hardcoding AWS credentials in application. For the IAM roles related to **SES**, take a look at the [sesIAMRole](https://github.com/lakshmantgld/aws-ses-serverless-example/tree/sesIAMRole) branch.
 
 ### Instructions to deploy:
 - Clone this repo:
